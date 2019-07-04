@@ -1,0 +1,77 @@
+---
+title: "4C homework"
+author: "Brago Aboagye-Nyame"
+date: "7/4/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 4c. Transformations
+```{r}
+head(ChickWeight)
+```
+
+#### question 1
+```{r}
+hist(ChickWeight$weight)
+```
+
+The shape of the histogram tells us that chick weight is skewed to the right.
+
+```{r}
+hist(scale(ChickWeight$weight))
+```
+
+The shape of the histogram does not change
+
+```{r}
+qqnorm(ChickWeight$weight)
+qqline(ChickWeight$weight, col= 'red')
+
+qqnorm(scale(ChickWeight$weight))
+qqline(scale(ChickWeight$weight), col= 'red')
+```
+
+The two are exactly the same except for the scale of the y axis. Since the points are mostly not on the line, this means that the distributions do not follow a normal distribution.
+
+```{r}
+library(tidyverse)
+ChickWeight <- ChickWeight %>% transform(log_weight = log(weight), sqrt_weight = sqrt(weight))
+
+qqnorm(ChickWeight$log_weight)
+qqline(ChickWeight$log_weight, col= 'red')
+
+qqnorm(ChickWeight$sqrt_weight)
+qqline(ChickWeight$sqrt_weight, col= 'red')
+```
+
+Both transformations do a really good job normalizing the middle values of the data since they fall on the line pretty well but the tail ends of the transformed distribution are still nonnormal.
+
+```{r}
+library(caret)
+bc_trans <- BoxCoxTrans(ChickWeight$weight, fudge= 0.05)
+ChickWeight$bc_weight <- predict(bc_trans, ChickWeight$weight)
+
+qqnorm(ChickWeight$bc_weight)
+qqline(ChickWeight$bc_weight, col= 'red')
+```
+
+I'm noticing the same trend how the transformation does really well with the middle values but falters at the tails.
+
+#### question 2
+```{r}
+normal_sample <- rnorm(1000, 0, 0.5)
+qqnorm(normal_sample)
+qqline(normal_sample, col= 'red')
+
+exp_sample <- rexp(1000, 10)
+qqnorm(exp_sample)
+qqline(exp_sample, col= 'red')
+
+log_exp_sample <- log(exp_sample)
+qqnorm(log_exp_sample)
+qqline(log_exp_sample, col= 'red')
+```
