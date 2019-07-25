@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1563907841690.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CBE7181E",
+    "lastKnownWriteTime" : 6,
+    "last_content_update" : 1563907841690,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "85CC3EC0",
+        "caption" : "survey1",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=survey1&cache_key=85CC3EC0",
+        "displayedObservations" : 51281,
+        "environment" : "",
+        "object" : "survey1",
+        "preview" : 0,
+        "totalObservations" : 51281,
+        "variables" : 26
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

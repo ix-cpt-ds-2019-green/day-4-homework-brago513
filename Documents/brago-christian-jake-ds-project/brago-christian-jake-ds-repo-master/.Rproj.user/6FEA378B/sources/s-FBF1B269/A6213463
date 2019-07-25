@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1563707576661.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "7|18|14|0|\n15|31|53|0|\n54|31|126|0|\n127|26|165|0|\n169|31|197|0|\n198|32|237|0|\n238|26|287|0|\n",
+    "hash" : "1135616023",
+    "id" : "A6213463",
+    "lastKnownWriteTime" : 1564044380,
+    "last_content_update" : 1564044380191,
+    "path" : "~/Documents/brago-christian-jake-ds-project/brago-christian-jake-ds-repo-master/brago, christian, jake project script.R",
+    "project_path" : "brago, christian, jake project script.R",
+    "properties" : {
+        "cursorPosition" : "289,5",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
